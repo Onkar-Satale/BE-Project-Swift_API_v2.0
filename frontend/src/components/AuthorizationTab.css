@@ -1,0 +1,110 @@
+.auth-tab {
+  background: transparent;
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.auth-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.auth-label {
+  font-size: 13px;
+  color: #bbb;
+}
+
+/* Custom Dropdown Container */
+.auth-dropdown-container {
+  position: relative;
+  width: 100%;
+}
+
+.auth-select-display {
+  background: var(--terminal-bg);
+  border: 1px solid var(--terminal-border);
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: var(--terminal-white);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.auth-select-display:hover {
+  border-color: var(--terminal-purple);
+}
+
+.auth-dropdown-arrow {
+  font-size: 10px;
+  color: var(--terminal-text-dim);
+}
+
+/* Custom Dropdown Menu */
+.auth-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: #000000;
+  border: 1px solid var(--terminal-border);
+  border-radius: 4px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  padding: 4px 0;
+  box-sizing: border-box;
+}
+
+.auth-dropdown-item {
+  padding: 8px 12px;
+  font-size: 13px;
+  color: var(--terminal-text-dim);
+  cursor: pointer;
+  transition: all 0.12s ease;
+  border-left: 2px solid transparent;
+  text-align: left;
+}
+
+.auth-dropdown-item:hover {
+  background: rgba(168, 85, 247, 0.1);
+  color: var(--terminal-white);
+}
+
+/* Selected option: no blue background, instead a purple border and white text */
+.auth-dropdown-item.selected {
+  border-left: 2px solid var(--terminal-purple);
+  color: var(--terminal-white);
+  background: rgba(168, 85, 247, 0.05);
+}
+
+.auth-input {
+  background: var(--terminal-bg);
+  border: 1px solid var(--terminal-border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 14px;
+  color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: var(--terminal-purple);
+}

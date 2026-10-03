@@ -1,0 +1,159 @@
+/* ParamsTab.css */
+
+/* Wrapper */
+.params-tab {
+  padding: 10px;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+/* Table */
+.params-table {
+  width: 100%;
+  border-collapse: separate;
+  /* ✅ CHANGED */
+  border-spacing: 0 6px;
+  /* ✅ CHANGED */
+  margin-bottom: 10px;
+  table-layout: fixed;
+
+}
+
+.params-table th,
+.params-table td {
+  padding: 6px 8px;
+  border: 1px solid var(--terminal-border);
+  text-align: left;
+  vertical-align: middle;
+  /* ✅ ADDED */
+}
+
+.params-table th {
+  background-color: var(--terminal-bg);
+  font-weight: bold;
+}
+
+/* Row background (Swift API style separation) */
+.params-table tbody tr {
+  background-color: transparent;
+  /* ✅ ADDED */
+}
+
+/* Input fields */
+.params-table input[type="text"] {
+  width: 100%;
+  height: 34px;
+  /* ✅ ADDED */
+  padding: 6px 8px;
+  /* ✅ CHANGED */
+  border: 1px solid var(--terminal-border);
+  border-radius: 4px;
+  background-color: var(--terminal-bg);
+  color: #fff;
+  box-sizing: border-box;
+  /* ✅ ADDED */
+}
+
+.params-table input[type="text"]::placeholder {
+  color: #888;
+}
+
+/* Remove button */
+.remove-btn {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.15s ease;
+}
+
+.remove-btn:hover {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+/* Add Param button */
+.add-param-btn {
+  background-color: var(--terminal-purple);
+  border: 1px solid var(--terminal-purple);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.15s ease;
+}
+
+.add-param-btn:hover {
+  background-color: var(--terminal-purple-dim);
+  border-color: var(--terminal-purple-dim);
+  box-shadow: 0 0 8px var(--terminal-purple-glow);
+}
+
+.params-table th:last-child,
+.params-table td:last-child {
+  width: 39px;
+  /* 👈 decrease/increase this if needed */
+  padding: 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .params-table,
+  .params-table thead,
+  .params-table tbody,
+  .params-table th,
+  .params-table td,
+  .params-table tr {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  .params-table thead {
+    display: none !important;
+  }
+  .params-table tbody tr {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 40px !important;
+    gap: 6px !important;
+    margin-bottom: 12px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: var(--terminal-bg);
+  }
+  .params-table td {
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+  .params-table td:nth-child(3) { /* Description */
+    grid-column: 1 / span 2 !important;
+  }
+  .params-table td:last-child { /* Remove button */
+    grid-column: 3 !important;
+    grid-row: 1 / span 2 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding-top: 0 !important;
+  }
+  .params-table .remove-btn {
+    width: 100% !important;
+    height: 32px !important;
+  }
+  .params-table input[type="text"] {
+    height: 32px !important;
+  }
+}

@@ -1,0 +1,115 @@
+/* frontend/src/components/Signup.css */
+
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--terminal-bg);
+  font-family: var(--terminal-font);
+  color: var(--terminal-text-bright);
+  overflow: hidden;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.signup-page form {
+  background-color: #000000;
+  padding: 24px 25px;
+  border-radius: 6px;
+  border: 1px solid var(--terminal-border);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.signup-page h2 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: var(--terminal-white);
+}
+
+.signup-page label {
+  margin: 8px 0 4px;
+  font-size: 13px;
+  color: var(--terminal-text-dim);
+}
+
+.signup-page input {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--terminal-bg);
+  border: 1px solid var(--terminal-border);
+  border-radius: 4px;
+  color: var(--terminal-white);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.signup-page input:focus {
+  border-color: var(--terminal-purple);
+}
+
+.signup-page button {
+  padding: 10px;
+  margin-top: 14px;
+  background-color: transparent;
+  color: var(--terminal-purple);
+  border: 1px solid var(--terminal-purple);
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.signup-page button:hover {
+  background-color: var(--terminal-purple-dim);
+  color: var(--terminal-white);
+}
+
+.signup-page button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.signup-page p {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 15px;
+  color: var(--terminal-text-dim);
+}
+
+.signup-page p span {
+  color: var(--terminal-purple);
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.signup-page p span:hover {
+  color: var(--terminal-white);
+}
+
+.signup-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #fca5a5;
+  padding: 8px 12px;
+  margin-top: 12px;
+  border-radius: 4px;
+  border: 1px solid #ef4444;
+  font-size: 13px;
+  text-align: center;
+}
+
+.signup-page small {
+  font-size: 11px;
+  margin-top: -4px;
+  margin-bottom: 10px;
+}

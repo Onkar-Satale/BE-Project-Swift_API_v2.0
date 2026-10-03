@@ -1,0 +1,356 @@
+/* ==== Options row container (horizontal layout) ==== */
+.body-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 1px;
+  margin-top: 7px;
+}
+
+/* ==== Custom Radio Buttons (Swift API style) ==== */
+.body-option {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #fff;
+}
+
+.body-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  background-color: #2b2b2b;
+  margin-right: 6px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Checked (selected) state */
+.body-option input[type="radio"]:checked {
+  border-color: var(--terminal-purple);
+  background-color: var(--terminal-purple);
+}
+
+/* White inner dot when selected */
+.body-option input[type="radio"]:checked::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ==== JSON EDITOR WRAPPER ==== */
+/* IMPORTANT: AceEditor manages its own scroll */
+.json-editor {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  /* VERY IMPORTANT */
+  overflow: hidden;
+}
+
+
+/* ===================================================== */
+/* ===== SCROLLABLE ELEMENTS (EXCLUDING AceEditor) ===== */
+/* ===================================================== */
+
+.sidebar-large,
+.response-body,
+.history-list {
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding-right: 12px;
+}
+
+/* --- Webkit Scrollbars (Chrome, Edge, Safari) --- */
+.sidebar-large::-webkit-scrollbar,
+.response-body::-webkit-scrollbar,
+.history-list::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.sidebar-large::-webkit-scrollbar-track,
+.response-body::-webkit-scrollbar-track,
+.history-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-large::-webkit-scrollbar-thumb,
+.response-body::-webkit-scrollbar-thumb,
+.history-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}
+
+/* --- Firefox --- */
+.sidebar-large,
+.response-body,
+.history-list {
+  scrollbar-width: thin;
+  scrollbar-color: #343434 transparent;
+}
+
+/* --- IE / Edge legacy --- */
+.sidebar-large,
+.response-body,
+.history-list {
+  -ms-overflow-style: scrollbar;
+}
+
+/* ===================================================== */
+/* ===== ACE EDITOR SCROLLBAR (CORRECT WAY) ===== */
+/* ===================================================== */
+
+.ace_scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #313131 transparent;
+}
+
+/* Webkit */
+.ace_scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.ace_scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ace_scrollbar::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+/* ==== No Body Hint ==== */
+.no-body-hint {
+  padding: 10px;
+  background-color: var(--terminal-bg);
+  color: #bbb;
+  font-size: 13px;
+  border: 1px dashed var(--terminal-border);
+  border-radius: 6px;
+  margin-top: 10px;
+  font-family: monospace;
+}
+
+/* no body text */
+.no-body-hint {
+  font-size: 14px;
+  color: #c0c0c0;
+}
+
+/* ==== Shared Hint Box Style ==== */
+.body-hint {
+  padding: 10px;
+  background-color: var(--terminal-bg);
+  color: #c0c0c0;
+  font-size: 14px;
+  border: 1px dashed var(--terminal-border);
+  border-radius: 6px;
+  margin-top: 10px;
+  font-family: monospace;
+  line-height: 1.4;
+}
+
+/* ==== No Body Hint (kept separate if you want different look) ==== */
+.no-body-hint {
+  padding: 10px;
+  background-color: var(--terminal-bg);
+  color: #d1d1d1;
+  font-size: 14px;
+  border: 1px dashed var(--terminal-border);
+  border-radius: 6px;
+  margin-top: 10px;
+  font-family: monospace;
+  line-height: 1.4;
+}
+
+
+.body-tab {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  /* 🔥 MOST IMPORTANT */
+}
+
+.json-editor {
+  flex: 1;
+  min-height: 0;
+  /* 🔥 MOST IMPORTANT */
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* Main layout must have height */
+.layout {
+  height: 100vh;
+  display: flex;
+}
+
+/* App area */
+.app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Tabs content wrapper */
+.tab-content {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+/* Request area (BodyTab parent) */
+.request-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.body-tab,
+.json-editor,
+.ace_editor {
+  width: 100%;
+}
+
+.raw-header-minimal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: var(--terminal-bg);
+  border: 1px solid var(--terminal-border);
+  border-radius: 6px;
+  margin-top: 7px;
+  margin-bottom: 8px;
+}
+
+.raw-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--terminal-purple);
+  background: rgba(168, 85, 247, 0.15);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.change-type-btn {
+  background: transparent;
+  border: 1px solid var(--terminal-border);
+  color: var(--terminal-text-dim);
+  padding: 4px 10px;
+  font-size: 12px;
+  font-radius: 4px;
+  cursor: pointer;
+  font-family: var(--terminal-font);
+  transition: all 0.2s ease;
+}
+
+/* Toolbar for Raw JSON Editor */
+.raw-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background-color: #000000;
+  border: 1px solid #222222;
+  border-bottom: 1px solid #1a1a1a;
+  border-radius: 6px 6px 0 0;
+  margin-top: 8px;
+}
+
+.format-json-btn,
+.clear-body-btn {
+  background: #181818;
+  border: 1px solid #2d2d2d;
+  color: #d1d5db;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11.5px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.format-json-btn:hover {
+  background: #262626;
+  color: #38bdf8;
+  border-color: #38bdf8;
+}
+
+.clear-body-btn:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+  border-color: #ef4444;
+}
+
+/* Table body editor styling for form-data and x-www-form-urlencoded */
+.table-body-editor {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.add-param-row-btn {
+  align-self: flex-start;
+  background: #0d0d0d;
+  border: 1px dashed #2e2e2e;
+  color: #38bdf8;
+  padding: 6px 14px;
+  font-size: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.add-param-row-btn:hover {
+  background: rgba(56, 189, 248, 0.1);
+  border-color: #38bdf8;
+}
+
+/* Force Ace Editor background to be pitch black */
+#json-editor,
+#json-editor .ace_gutter,
+#json-editor .ace_scroller,
+#json-editor .ace_content,
+.ace_editor,
+.ace_editor .ace_gutter,
+.ace_editor .ace_scroller,
+.ace_editor .ace_content,
+.ace_twilight,
+.ace_twilight .ace_gutter,
+.ace_twilight .ace_scroller {
+  background-color: #000000 !important;
+  background: #000000 !important;
+}
+
+#json-editor .ace_gutter,
+.ace_editor .ace_gutter {
+  background-color: #080808 !important;
+  border-right: 1px solid #1a1a1a;
+}

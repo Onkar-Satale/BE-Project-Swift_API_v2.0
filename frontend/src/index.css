@@ -1,0 +1,162 @@
+/* frontend/src/index.css */
+
+:root {
+  --terminal-bg: #09090b;
+  --terminal-surface: #121215;
+  --terminal-border: #27272a;
+  --terminal-border-subtle: #1f1f23;
+  --terminal-purple: #8b5cf6;
+  --terminal-purple-dim: #7c3aed;
+  --terminal-purple-glow: rgba(139, 92, 246, 0.35);
+  --terminal-purple-subtle: rgba(139, 92, 246, 0.1);
+  --terminal-green: #22c55e;
+  --terminal-red: #ef4444;
+  --terminal-blue: #3b82f6;
+  --terminal-orange: #8b5cf6;
+  --terminal-orange-dim: rgba(139, 92, 246, 0.1);
+  --terminal-pink: #8b5cf6;
+  --terminal-white: #ffffff;
+  --terminal-text-bright: #f4f4f5;
+  --terminal-text-dim: #a1a1aa;
+  --terminal-text-muted: #71717a;
+  --terminal-font: "Courier New", Courier, Monaco, "Fira Code", monospace;
+  --terminal-font-size: 12.5px;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden !important;
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text-bright);
+  font-family: var(--terminal-font) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force uniform text size across the entire application for console consistency */
+html,
+body,
+p,
+span,
+div,
+li,
+label,
+pre,
+td,
+th,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+button {
+  font-size: var(--terminal-font-size) !important;
+}
+
+/* Global scrollbars styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--terminal-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--terminal-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terminal-purple-dim);
+}
+
+/* Global inputs default formatting */
+input,
+textarea,
+select,
+button {
+  font-family: var(--terminal-font) !important;
+}
+
+/* Chrome, Safari, Edge autofill style override to maintain dark theme */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--terminal-bg) inset !important;
+  -webkit-text-fill-color: var(--terminal-white) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Toast notifications styled as terminal messages */
+.toast {
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  width: fit-content !important;
+  max-width: 260px !important;
+  background-color: var(--terminal-bg) !important;
+  border: 1px solid var(--terminal-purple) !important;
+  color: var(--terminal-white) !important;
+  padding: 10px 16px !important;
+  border-radius: 4px !important;
+  z-index: 9999 !important;
+  font-size: 11px !important;
+  font-family: var(--terminal-font), monospace !important;
+  font-weight: bold !important;
+  line-height: 1.4 !important;
+  text-align: left !important;
+  box-shadow: none !important;
+  animation: slideIn 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Eliminate 300ms touch delay on mobile/touch screens */
+button,
+a,
+input,
+select,
+textarea {
+  touch-action: manipulation !important;
+}
+
+/* Snappy instant tactile click feedback for all buttons */
+button:active {
+  transform: scale(0.97) !important;
+  transition: transform 0.05s ease !important;
+}
+
+/* Global text size scale up for mobile screens */
+@media (max-width: 768px) {
+  :root {
+    --terminal-font-size: 15px;
+  }
+}

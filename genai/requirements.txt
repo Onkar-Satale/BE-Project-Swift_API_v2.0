@@ -1,0 +1,23 @@
+# FastAPI framework for creating REST APIs
+fastapi==0.111.0
+
+# ASGI server to run the FastAPI application
+uvicorn==0.30.1
+
+# Validates and parses request/response data
+pydantic==2.7.4
+
+# Official Groq SDK to interact with LLMs
+groq==0.5.0
+
+# ChromaDB Vector Database for RAG Memory & Embeddings
+chromadb>=0.4.0
+
+# Loads environment variables from the .env file
+python-dotenv==1.0.1
+
+# Adds rate limiting to protect APIs from excessive requests
+slowapi==0.1.9
+
+# Sends HTTP requests to external APIs (e.g., Weather API)
+httpx==0.27.2

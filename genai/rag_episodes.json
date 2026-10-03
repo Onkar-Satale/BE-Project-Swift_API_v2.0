@@ -1,0 +1,65 @@
+{
+  "guest": [
+    {
+      "episodeId": "ep_seed_404_typo",
+      "userId": "guest",
+      "timestamp": "2026-09-02T12:00:00.000Z",
+      "method": "GET",
+      "url": "https://jsonplaceholder.typicode.com/commentss",
+      "failedStatus": 404,
+      "errorSnippet": "Cannot GET /commentss - Route not found on remote server",
+      "rootCauseLayer": "Server / Business Logic",
+      "appliedFix": {
+        "title": "Correct URL Route",
+        "description": "Fixed typo in endpoint URL from /commentss to /comments",
+        "actionPayload": {
+          "type": "set_url",
+          "key": "url",
+          "value": "https://jsonplaceholder.typicode.com/comments"
+        }
+      },
+      "successStatus": 200,
+      "successDuration": 350,
+      "embedding": [
+        0.05, 0.12, 0.08, 0.22, 0.03, 0.15, 0.09, 0.04,
+        0.18, 0.06, 0.11, 0.07, 0.02, 0.25, 0.14, 0.08,
+        0.03, 0.19, 0.05, 0.12, 0.07, 0.04, 0.21, 0.10,
+        0.06, 0.13, 0.09, 0.02, 0.17, 0.08, 0.14, 0.05,
+        0.11, 0.04, 0.20, 0.07, 0.15, 0.03, 0.18, 0.09,
+        0.06, 0.12, 0.05, 0.23, 0.08, 0.16, 0.04, 0.11,
+        0.07, 0.19, 0.02, 0.14, 0.09, 0.06, 0.22, 0.05,
+        0.13, 0.08, 0.17, 0.04, 0.10, 0.15, 0.03, 0.18
+      ]
+    },
+    {
+      "episodeId": "ep_seed_401_auth",
+      "userId": "guest",
+      "timestamp": "2026-09-02T11:30:00.000Z",
+      "method": "GET",
+      "url": "https://api.example.com/protected",
+      "failedStatus": 401,
+      "errorSnippet": "Unauthorized: Missing Bearer Token in Authorization header",
+      "rootCauseLayer": "JWT / Authentication",
+      "appliedFix": {
+        "title": "Add Authorization Header",
+        "description": "Configured Bearer authentication header with valid access token",
+        "actionPayload": {
+          "type": "set_auth",
+          "token": "valid_bearer_token_xyz"
+        }
+      },
+      "successStatus": 200,
+      "successDuration": 180,
+      "embedding": [
+        0.15, 0.04, 0.22, 0.08, 0.12, 0.05, 0.19, 0.07,
+        0.03, 0.25, 0.09, 0.14, 0.06, 0.11, 0.02, 0.18,
+        0.10, 0.07, 0.21, 0.04, 0.16, 0.08, 0.05, 0.13,
+        0.09, 0.02, 0.17, 0.12, 0.06, 0.24, 0.08, 0.15,
+        0.03, 0.19, 0.07, 0.11, 0.05, 0.22, 0.14, 0.06,
+        0.08, 0.16, 0.04, 0.10, 0.20, 0.03, 0.17, 0.09,
+        0.13, 0.05, 0.23, 0.08, 0.02, 0.18, 0.11, 0.07,
+        0.04, 0.21, 0.09, 0.15, 0.06, 0.12, 0.03, 0.20
+      ]
+    }
+  ]
+}
